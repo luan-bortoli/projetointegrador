@@ -76,10 +76,8 @@ public class FrmTelaCliente extends javax.swing.JFrame {
         jTextFieldCidade = new javax.swing.JTextField();
         jFormattedTextFieldCEP = new javax.swing.JFormattedTextField();
         jTextFieldIdentificador = new javax.swing.JTextField();
-        jComboBox1 = new javax.swing.JComboBox<>();
         jComboBoxUF = new javax.swing.JComboBox<>();
         jButtonNovoCadastro = new javax.swing.JButton();
-        jButtonSalvarEndereco = new javax.swing.JButton();
         jButtonListarEndereco = new javax.swing.JButton();
         jTextFieldComplemento = new javax.swing.JTextField();
         jLabel14 = new javax.swing.JLabel();
@@ -132,7 +130,7 @@ public class FrmTelaCliente extends javax.swing.JFrame {
         jLabel6.setText("Telefone:");
 
         jLabel7.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        jLabel7.setText("Endereços");
+        jLabel7.setText("Endereço");
 
         jLabel8.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel8.setText("Rua:");
@@ -211,25 +209,12 @@ public class FrmTelaCliente extends javax.swing.JFrame {
             }
         });
 
-        jComboBox1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jComboBox1ActionPerformed(evt);
-            }
-        });
-
         jComboBoxUF.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "AC", "AL", "AP", "AM", "BA", "CE", "DF", "ES", "GO", "MA", "MT", "MS", "MG", "PA", "PB", "PR", "PE", "PI", "RJ", "RN", "RS", "RO", "RR", "SC", "SP", "SE", "TO" }));
 
         jButtonNovoCadastro.setText("Novo Cadastro");
         jButtonNovoCadastro.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButtonNovoCadastroActionPerformed(evt);
-            }
-        });
-
-        jButtonSalvarEndereco.setText("Salvar Endereço");
-        jButtonSalvarEndereco.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButtonSalvarEnderecoActionPerformed(evt);
             }
         });
 
@@ -307,24 +292,21 @@ public class FrmTelaCliente extends javax.swing.JFrame {
                                         .addGroup(jPanelCadastroLayout.createSequentialGroup()
                                             .addComponent(jLabel13)
                                             .addGap(6, 6, 6)))))
-                            .addGroup(jPanelCadastroLayout.createSequentialGroup()
-                                .addComponent(jLabel7)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(jLabel7)
                             .addGroup(jPanelCadastroLayout.createSequentialGroup()
                                 .addComponent(jLabel2)
                                 .addGap(2, 2, 2)
-                                .addComponent(jTextFieldIdentificador, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addComponent(jTextFieldIdentificador, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addGroup(jPanelCadastroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanelCadastroLayout.createSequentialGroup()
                                 .addGap(17, 17, 17)
-                                .addGroup(jPanelCadastroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jFormattedTextFieldCPF, javax.swing.GroupLayout.PREFERRED_SIZE, 104, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jFormattedTextFieldTelefone, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jFormattedTextFieldCEP, javax.swing.GroupLayout.PREFERRED_SIZE, 78, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addComponent(jFormattedTextFieldCEP, javax.swing.GroupLayout.PREFERRED_SIZE, 78, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(jPanelCadastroLayout.createSequentialGroup()
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jFormattedTextFieldNumero, javax.swing.GroupLayout.PREFERRED_SIZE, 69, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                                .addGroup(jPanelCadastroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jFormattedTextFieldTelefone, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jFormattedTextFieldNumero, javax.swing.GroupLayout.PREFERRED_SIZE, 69, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jFormattedTextFieldCPF, javax.swing.GroupLayout.PREFERRED_SIZE, 104, javax.swing.GroupLayout.PREFERRED_SIZE)))))
                     .addGroup(jPanelCadastroLayout.createSequentialGroup()
                         .addComponent(jLabel14)
                         .addGap(4, 4, 4)
@@ -334,16 +316,15 @@ public class FrmTelaCliente extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jTextFieldBairro, javax.swing.GroupLayout.PREFERRED_SIZE, 247, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanelCadastroLayout.createSequentialGroup()
-                        .addComponent(jButtonSalvarEndereco)
-                        .addGap(18, 18, 18)
+                        .addGap(76, 76, 76)
                         .addComponent(jButtonListarEndereco)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jButtonNovoCadastro)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jButtonAtualizar)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jButtonExcluir)))
-                .addContainerGap(27, Short.MAX_VALUE))
+                .addContainerGap(12, Short.MAX_VALUE))
         );
         jPanelCadastroLayout.setVerticalGroup(
             jPanelCadastroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -365,9 +346,7 @@ public class FrmTelaCliente extends javax.swing.JFrame {
                     .addComponent(jTextFieldEmail, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jFormattedTextFieldTelefone, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
-                .addGroup(jPanelCadastroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel7)
-                    .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addComponent(jLabel7)
                 .addGap(18, 18, 18)
                 .addGroup(jPanelCadastroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanelCadastroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -395,12 +374,11 @@ public class FrmTelaCliente extends javax.swing.JFrame {
                         .addComponent(jLabel11)))
                 .addGap(18, 18, 18)
                 .addGroup(jPanelCadastroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButtonSalvarEndereco)
                     .addComponent(jButtonListarEndereco)
                     .addComponent(jButtonNovoCadastro)
                     .addComponent(jButtonAtualizar)
                     .addComponent(jButtonExcluir))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(18, Short.MAX_VALUE))
         );
 
         jTabbedPaneCliente.addTab("Dados do Cliente", jPanelCadastro);
@@ -468,7 +446,7 @@ public class FrmTelaCliente extends javax.swing.JFrame {
                 .addGap(20, 20, 20)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 557, Short.MAX_VALUE)
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
                         .addContainerGap())
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addGap(31, 31, 31)
@@ -497,7 +475,7 @@ public class FrmTelaCliente extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(JPanelCabCliente, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(layout.createSequentialGroup()
-                .addComponent(jTabbedPaneCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
+                .addComponent(jTabbedPaneCliente)
                 .addContainerGap())
         );
         layout.setVerticalGroup(
@@ -505,8 +483,7 @@ public class FrmTelaCliente extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addComponent(JPanelCabCliente, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jTabbedPaneCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 315, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addComponent(jTabbedPaneCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 315, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
         pack();
@@ -558,30 +535,6 @@ public class FrmTelaCliente extends javax.swing.JFrame {
         
         
     }//GEN-LAST:event_jButtonNovoCadastroActionPerformed
-
-    private void jButtonSalvarEnderecoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonSalvarEnderecoActionPerformed
-        try {
-            Endereco endereco = new Endereco();
-            
-            endereco.setRua(jTextFieldRua.getText());
-            //endereco.setNumero(Integer.parseInt(jTextFieldNumero.getText()));
-            endereco.setNumero(Integer.parseInt(jFormattedTextFieldNumero.getText()));
-            endereco.setComplemento(jTextFieldComplemento.getText());
-            endereco.setBairro(jTextFieldBairro.getText());
-            endereco.setCidade(jTextFieldCidade.getText());
-            endereco.setUF(jComboBoxUF.getSelectedItem().toString());
-            endereco.setCEP(jFormattedTextFieldCEP.getText());
-            
-            EnderecoDAO enderecoDAO = new EnderecoDAO();
-            enderecoDAO.cadastrarEndereco(endereco);
-            
-            Utilitarios util = new Utilitarios();
-            util.limpar(jPanelCadastro);
-            
-        } catch (Exception e) {
-            JOptionPane.showMessageDialog(null, e);
-        }
-    }//GEN-LAST:event_jButtonSalvarEnderecoActionPerformed
 
     private void jTextFieldComplementoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldComplementoActionPerformed
         // TODO add your handling code here:
@@ -730,10 +683,6 @@ public class FrmTelaCliente extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_jTextFieldPesquisaKeyPressed
 
-    private void jComboBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox1ActionPerformed
-
-    }//GEN-LAST:event_jComboBox1ActionPerformed
-
     public static void main(String args[]) {
 
         java.awt.EventQueue.invokeLater(new Runnable() {
@@ -750,8 +699,6 @@ public class FrmTelaCliente extends javax.swing.JFrame {
     private javax.swing.JButton jButtonListarEndereco;
     private javax.swing.JButton jButtonNovoCadastro;
     private javax.swing.JButton jButtonPesquisar;
-    private javax.swing.JButton jButtonSalvarEndereco;
-    private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JComboBox<String> jComboBoxUF;
     private javax.swing.JFormattedTextField jFormattedTextFieldCEP;
     private javax.swing.JFormattedTextField jFormattedTextFieldCPF;
