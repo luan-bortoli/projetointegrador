@@ -4,6 +4,7 @@ import java.util.List;
 import javax.swing.table.DefaultTableModel;
 import projetointegrador.dao.EnderecoDAO;
 import projetointegrador.model.Endereco;
+import projetointegrador.model.Cliente;
 
 public class FrmListarEnderecos extends javax.swing.JFrame {
     
@@ -30,13 +31,12 @@ public class FrmListarEnderecos extends javax.swing.JFrame {
         endereco.getBairro(),
         endereco.getCidade(),
         endereco.getUF(),
-        endereco.getCEP()
+        endereco.getCEP(),
+        endereco.getCliente().getId_Cliente()
     } );
     }
 }
-    /**
-     * Creates new form JFrmListarEnderecos
-     */
+
     public FrmListarEnderecos() {
         initComponents();
     }
@@ -70,7 +70,20 @@ public class FrmListarEnderecos extends javax.swing.JFrame {
             new String [] {
                 "ID", "Rua", "Número", "Complemento", "Bairro", "Cidade", "UF", "CEP", "Id_Cliente"
             }
-        ));
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, false, false, false, false, false, false, false, false
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        jTableEnderecos.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jTableEnderecosMouseClicked(evt);
+            }
+        });
         jScrollPane1.setViewportView(jTableEnderecos);
 
         JPanelCabCliente.setBackground(new java.awt.Color(204, 204, 255));
@@ -133,6 +146,10 @@ public class FrmListarEnderecos extends javax.swing.JFrame {
     private void formWindowActivated(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowActivated
         tabelarEnderecos();
     }//GEN-LAST:event_formWindowActivated
+
+    private void jTableEnderecosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTableEnderecosMouseClicked
+    
+    }//GEN-LAST:event_jTableEnderecosMouseClicked
 
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */

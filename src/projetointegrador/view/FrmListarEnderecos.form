@@ -75,15 +75,15 @@
               <Properties>
                 <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
                   <Table columnCount="9" rowCount="0">
-                    <Column editable="true" title="ID" type="java.lang.Object"/>
-                    <Column editable="true" title="Rua" type="java.lang.Object"/>
-                    <Column editable="true" title="N&#xfa;mero" type="java.lang.Object"/>
-                    <Column editable="true" title="Complemento" type="java.lang.Object"/>
-                    <Column editable="true" title="Bairro" type="java.lang.Object"/>
-                    <Column editable="true" title="Cidade" type="java.lang.Object"/>
-                    <Column editable="true" title="UF" type="java.lang.Object"/>
-                    <Column editable="true" title="CEP" type="java.lang.Object"/>
-                    <Column editable="true" title="Id_Cliente" type="java.lang.Object"/>
+                    <Column editable="false" title="ID" type="java.lang.Object"/>
+                    <Column editable="false" title="Rua" type="java.lang.Object"/>
+                    <Column editable="false" title="N&#xfa;mero" type="java.lang.Object"/>
+                    <Column editable="false" title="Complemento" type="java.lang.Object"/>
+                    <Column editable="false" title="Bairro" type="java.lang.Object"/>
+                    <Column editable="false" title="Cidade" type="java.lang.Object"/>
+                    <Column editable="false" title="UF" type="java.lang.Object"/>
+                    <Column editable="false" title="CEP" type="java.lang.Object"/>
+                    <Column editable="false" title="Id_Cliente" type="java.lang.Object"/>
                   </Table>
                 </Property>
                 <Property name="columnModel" type="javax.swing.table.TableColumnModel" editor="org.netbeans.modules.form.editors2.TableColumnModelEditor">
@@ -139,6 +139,9 @@
                   <TableHeader reorderingAllowed="true" resizingAllowed="true"/>
                 </Property>
               </Properties>
+              <Events>
+                <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="jTableEnderecosMouseClicked"/>
+              </Events>
             </Component>
           </SubComponents>
         </Container>

@@ -10,6 +10,7 @@ import projetointegrador.jdbc.ConnectionFactory;
 import projetointegrador.model.Endereco;
 import javax.swing.JOptionPane;
 import java.sql.ResultSet;
+import projetointegrador.model.Cliente;
 //import projetointegrador.model.Endereco;
 
 public class EnderecoDAO {
@@ -79,12 +80,17 @@ public class EnderecoDAO {
                 obj.setComplemento(rs.getString("Complemento"));
                 obj.setBairro(rs.getString("bairro"));
                 obj.setCidade(rs.getString("Cidade"));
-                
-                //System.out.println("Objeto: " + obj);
+                obj.setUF(rs.getString("UF"));
+                Cliente cli = new Cliente();
+                cli.setId_Cliente(rs.getInt("Id_Cliente"));
+                obj.setCliente(cli);
                 
                 //Após todos os atributos serem inseridos dentro do objeto preciso adicionar esse objeto na minha lista de endereços
                 listaEndereco.add(obj);
             }
+               
+                //System.out.println("Objeto: " + obj);
+                
             //System.out.println("Lista: " + listaEndereco);
             return listaEndereco;
         } catch (SQLException e) {

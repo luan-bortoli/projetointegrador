@@ -88,5 +88,4 @@ public class Endereco {
     public void setCliente(Cliente cliente) {
         this.cliente = cliente;
     }
-    
 }
